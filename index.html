@@ -6,6 +6,7 @@
   <title>A Origem do Mascote do Android</title>
   <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="android.css">
+  <script src="modal.js"></script>
 </head>
 <body>
   <header>
@@ -113,42 +114,16 @@
 
       <p>Então é isso! Esperamos que você tenha curtido esta viagem pela história do <span class="android">Android</span> e do seu carismático mascote, aprendendo fatos curiosos e curiosidades que vão além do que você vê na tela do seu smartphone.</p>
     </article>
-
-    <!-- Modal -->
-    <div id="imageModal" class="modal">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <img class="modal-content" id="modalImg">
-    </div>
-    <hr>
   </main>
 
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImg">
+  </div>
+    
   <footer>
     <p>Site desenvolvido por <a href="https://www.tiktok.com/@furiousofnightgames" target="_blank" rel="noopener noreferrer">FuriousOfNight</a> com inspiração do <a href="https://www.cursoemvideo.com/" target="_blank" rel="noopener noreferrer">Curso em Vídeo</a></p>
   </footer>
-
-  <!-- Scripts -->
-  <script src="modal.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('abbr').forEach(el => {
-        el.addEventListener('click', function (event) {
-          event.stopPropagation();
-
-          const existing = document.querySelector('.tooltip');
-          if (existing) existing.remove();
-
-          const tooltip = document.createElement('div');
-          tooltip.className = 'tooltip';
-          tooltip.textContent = el.getAttribute('title');
-          document.body.appendChild(tooltip);
-
-          setTimeout(() => tooltip.remove(), 3000);
-          document.body.addEventListener('click', e => {
-            if (!el.contains(e.target)) tooltip.remove();
-          }, { once: true });
-        });
-      });
-    });
-  </script>
 </body>
 </html>

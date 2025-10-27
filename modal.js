@@ -44,3 +44,24 @@ function openModal(pictureElem) {
 function closeModal() {
     document.getElementById("imageModal").style.display = "none";
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('abbr').forEach(el => {
+        el.addEventListener('click', function (event) {
+          event.stopPropagation();
+
+          const existing = document.querySelector('.tooltip');
+          if (existing) existing.remove();
+
+          const tooltip = document.createElement('div');
+          tooltip.className = 'tooltip';
+          tooltip.textContent = el.getAttribute('title');
+          document.body.appendChild(tooltip);
+
+          setTimeout(() => tooltip.remove(), 3000);
+          document.body.addEventListener('click', e => {
+            if (!el.contains(e.target)) tooltip.remove();
+          }, { once: true });
+        });
+      });
+    });
