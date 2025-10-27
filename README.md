@@ -1,6 +1,6 @@
 # 🤖 História do Mascote Android
 
-![Banner do Projeto Android](imagens/dan-droids.png)
+![Banner do Projeto Android](https://furiousofnight.github.io/pagina-android/imagens/dan-droids.png)
 
 ## 📱 Sobre o Projeto
 
